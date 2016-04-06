@@ -4,7 +4,7 @@ public class Decimal2Extenso {
 
     public static void main(String[] args) {
         boolean cVazio, dVazio, uVazio;
-        int num = 220;
+        int num = 99;
         
         int centena = num/100;
         cVazio = centena==0;
@@ -22,7 +22,35 @@ public class Decimal2Extenso {
         if(cVazio&&dVazio&&uVazio)
             numExten.append(UNIDADES[0]);
         else if(!cVazio&&dVazio&&uVazio)
-            numExten.append(CENTENAS[0]);
+            switch(centena){
+                case 1:
+                    numExten.append(CENTENAS[0]);
+                    break;
+                case 2:
+                    numExten.append(CENTENAS[2]);
+                    break;
+                case 3:
+                    numExten.append(CENTENAS[3]);
+                    break;
+                case 4:
+                    numExten.append(CENTENAS[4]);
+                    break;
+                case 5:
+                    numExten.append(CENTENAS[5]);
+                    break;
+                case 6:
+                    numExten.append(CENTENAS[6]);
+                    break;
+                case 7:
+                    numExten.append(CENTENAS[7]);
+                    break;
+                case 8:
+                    numExten.append(CENTENAS[8]);
+                    break;
+                case 9:
+                    numExten.append(CENTENAS[9]);
+                    break;
+            }
         else if(!cVazio){
             String aux = definirCentena(centena);
             if(!dVazio||!uVazio)
